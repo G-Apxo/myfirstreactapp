@@ -1,11 +1,11 @@
 import React from "react";
-
-const Footer = ({ navigation }) => {
+import { nav } from "../../../data/nav";
+const Footer = () => {
   return (
     <footer>
       <nav>
         <ul>
-          {navigation.map((item, index) => (
+          {nav.map((item, index) => (
             <li key={index}>{item.title}</li>
           ))}
         </ul>

@@ -1,14 +1,44 @@
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
-import Input from "./components/input";
-import { nav } from "./data/nav";
-import { inputData } from "./data/inputData";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Services from "./pages/services";
+import Contact from "./pages/contact";
+import ContactId from "./pages/contactID";
+import Search from "./components/layout/Search";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/services",
+    element: <Services />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+  {
+    path: "/contact/:id",
+    element: <ContactId />,
+  },
+]);
+
 function App() {
   return (
-    <div className="App">
-      <Header navigation={nav} />
-      <Input inputData={inputData} />
-      <Footer navigation={nav} />
+    <div className="flex gap-25">
+      <Header />
+      <div className="dashboard_layout">
+        <Search />
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }

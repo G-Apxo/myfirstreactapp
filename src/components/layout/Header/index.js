@@ -1,16 +1,19 @@
 import React from "react";
 import NavItem from "./navItem";
-
-const Header = ({ navigation }) => {
+import { nav } from "../../../data/nav";
+import Logo from "./../../assets/logo";
+const Header = () => {
   return (
-    <header>
+    <header className="h-screen">
+      <Logo />
       <nav>
-        <ul>
-          {navigation.map((item, index) => (
+        <ul className="flex-col">
+          {nav.map((item, index) => (
             <NavItem key={index} item={item} />
           ))}
         </ul>
       </nav>
+      <div />
     </header>
   );
 };
